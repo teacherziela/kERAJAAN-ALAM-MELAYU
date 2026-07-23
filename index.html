@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#081b2c" />
+  <title>SejarahVerse Form 2 — Johor Riau</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="gameCanvas" aria-label="Permainan SejarahVerse"></canvas>
+
+    <div id="hud">
+      <div class="hud-card brand">
+        <strong>SEJARAHVERSE</strong>
+        <span>FORM 2 · JOHOR RIAU</span>
+      </div>
+      <div class="hud-card stats">
+        <span>❤️ <b id="hp">3</b></span>
+        <span>🪙 <b id="coins">0</b></span>
+        <span>⭐ <b id="xp">0</b></span>
+      </div>
+      <div class="hud-card quest">
+        <span>MISI SEMASA</span>
+        <strong id="questText">Bercakap dengan Bendahara</strong>
+      </div>
+    </div>
+
+    <button id="soundBtn" class="round-btn" aria-label="Bunyi">🔊</button>
+
+    <div id="mobileControls">
+      <div class="dpad">
+        <button data-dir="up">▲</button>
+        <div>
+          <button data-dir="left">◀</button>
+          <button data-dir="down">▼</button>
+          <button data-dir="right">▶</button>
+        </div>
+      </div>
+      <button id="actionBtn" class="action-btn">TINDAKAN</button>
+    </div>
+
+    <div id="startScreen" class="overlay show">
+      <div class="panel hero-panel">
+        <p class="eyebrow">PENGEMBARAAN SEJARAH TINGKATAN 2</p>
+        <h1>SEJARAHVERSE</h1>
+        <h2>Misi Warisan Johor Riau</h2>
+        <p>
+          Cap Mohor Diraja telah dicuri. Jelajah Kota Johor Lama, bantu penduduk,
+          jawab cabaran sejarah dan pulihkan maruah kerajaan.
+        </p>
+        <label>
+          Nama pengembara
+          <input id="playerName" maxlength="18" placeholder="Contoh: Aiman" />
+        </label>
+        <label>
+          Kelas
+          <select id="playerClass">
+            <option>2 Adil</option>
+            <option>2 Cendekia</option>
+            <option>2 Dedikasi</option>
+            <option>2 Gigih</option>
+            <option>2 Progresif</option>
+            <option>2 Usaha</option>
+            <option>2 Rasional</option>
+            <option>2 Ehsan</option>
+          </select>
+        </label>
+        <button id="startBtn" class="primary-btn">MULA PENGEMBARAAN</button>
+        <small>Komputer: WASD/anak panah + E · Telefon: butang kawalan</small>
+      </div>
+    </div>
+
+    <div id="dialogOverlay" class="overlay">
+      <div class="panel dialog-panel">
+        <div class="npc-avatar" id="npcAvatar">👴</div>
+        <div>
+          <p class="eyebrow" id="npcName">BENDAHARA</p>
+          <p id="dialogText"></p>
+          <button id="dialogNext" class="primary-btn">TERUSKAN</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quizOverlay" class="overlay">
+      <div class="panel quiz-panel">
+        <p class="eyebrow">CABARAN SEJARAH</p>
+        <div class="battle-row">
+          <span>🚢 Kapal Johor</span>
+          <div class="enemy-hp"><i id="enemyHpBar"></i></div>
+          <span>🏴‍☠️ Lanun</span>
+        </div>
+        <h2 id="quizQuestion"></h2>
+        <div id="quizOptions" class="options"></div>
+        <p id="quizFeedback"></p>
+      </div>
+    </div>
+
+    <div id="completeOverlay" class="overlay">
+      <div class="panel complete-panel">
+        <div class="trophy">🏆</div>
+        <p class="eyebrow">MISI SELESAI</p>
+        <h2>Penyelamat Johor Riau</h2>
+        <p id="completeText"></p>
+        <div class="result-grid">
+          <div><span>Markah</span><strong id="finalScore">0%</strong></div>
+          <div><span>XP</span><strong id="finalXp">0</strong></div>
+          <div><span>Syiling</span><strong id="finalCoins">0</strong></div>
+        </div>
+        <button id="restartBtn" class="primary-btn">MAIN SEMULA</button>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
